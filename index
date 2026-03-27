@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LEAH — Luxury AI Concierge for discerning Airbnb hosts. Bespoke guest communication, perpetually refined. SOLUTIONa4U.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SOLUTIONa4U">
+    <title>LEAH | Luxury AI Concierge — SOLUTIONa4U</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+:root {
+    /* Hyper-realistic polished gold */
+    --gold-1: #FFF5C8;
+    --gold-2: #F5D97A;
+    --gold-3: #D4A72C;
+    --gold-4: #B8860B;
+    --gold-5: #7A5500;
+    --gold-metal: linear-gradient(135deg, #FFF5C8 0%, #F5D97A 12%, #D4A72C 28%, #B8860B 42%, #E8C050 55%, #F5D97A 65%, #D4A72C 78%, #9A6A00 92%, #C9A030 100%);
+    --gold-metal-flat: linear-gradient(135deg, #F5D97A 0%, #D4A72C 35%, #F0C040 55%, #B8860B 80%, #E0B030 100%);
+    --gold-shine: linear-gradient(105deg, transparent 20%, rgba(255,245,180,0.9) 35%, rgba(255,250,220,1) 50%, rgba(255,245,180,0.9) 65%, transparent 80%);
+    /* Pearl whites */
+    --pearl-pure: #FDFCF8;
+    --pearl-warm: #F5F0E8;
+    --pearl-mid: #EDE6D8;
+    --pearl-deep: #E0D5C0;
+    --pearl-shadow: rgba(160,140,100,0.12);
+    /* Obsidian */
+    --obsidian: #08080A;
+    --obsidian-2: #0E0E12;
+    --obsidian-3: #141418;
+    --obsidian-4: #1C1C22;
+    /* Type on pearl */
+    --ink: #1A1610;
+    --ink-mid: #3D3525;
+    --ink-light: #6B5D45;
+    --ink-faint: #9A8E7A;
+    /* Type on dark */
+    --pearl: #F0EDE8;
+    --pearl-dim: #C8C4BC;
+    --steel: #8A8A9A;
+    --steel-light: #B4B4C4;
+    --white: #FAFAF8;
+    /* Borders */
+    --border-gold: rgba(212,167,44,0.25);
+    --border-dark: rgba(255,255,255,0.06);
+    --border-pearl: rgba(160,140,100,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--obsidian);
+    font-family: 'Jost', sans-serif;
+    color: var(--pearl);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* BOT IMAGE BACKGROUND WALLPAPER - REPLACE WITH YOUR IMAGE */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('YOUR-BOT-IMAGE-HERE.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: soft-light;
+}
+
+/* Grain texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.022;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* All content sits above background */
+section, footer, .nav, .cookie-consent, .legal-overlay {
+    position: relative;
+    z-index: 1;
+}
+
+/* Language Toggle Button */
+.lang-toggle {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,167,44,0.3);
+    color: var(--gold-2);
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    font-family: 'Jost', sans-serif;
+}
+.lang-toggle:hover {
+    background: rgba(212,167,44,0.15);
+    border-color: var(--gold-2);
+}
+
+/* Scrolling Chat Reels Section */
+.chat-reels {
+    padding: 6rem 5%;
+    background: linear-gradient(180deg, var(--obsidian-2) 0%, var(--obsidian) 100%);
+    position: relative;
+    overflow: hidden;
+}
+.chat-reels::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+}
+.chat-reels-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.chat-reels-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.chat-reels-header .section-label {
+    color: var(--gold-2);
+}
+.chat-reels-header h2 {
+    color: var(--white);
+    font-size: 2.8rem;
+}
+.chat-reels-carousel {
+    position: relative;
+    min-height: 380px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 24px;
+    border: 1px solid rgba(212,167,44,0.15);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.chat-reel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.chat-reel.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.reel-messages {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+.reel-message {
+    margin-bottom: 1.2rem;
+    animation: messageSlideIn 0.5s ease forwards;
+}
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reel-message.guest {
+    display: flex;
+    justify-content: flex-end;
+}
+.reel-message.leah {
+    display: flex;
+    justify-content: flex-start;
+}
+.reel-bubble {
+    max-width: 80%;
+    padding: 0.9rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.reel-bubble.guest {
+    background: linear-gradient(135deg, #2A2218, #1A1610);
+    color: var(--pearl);
+    border-radius: 20px 20px 4px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.reel-bubble.leah {
+    background: linear-gradient(135deg, #FFFFFF, #F8F3EA);
+    color: var(--ink);
+    border: 1px solid rgba(184,134,11,0.15);
+    border-radius: 20px 20px 20px 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.reel-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+.reel-name.guest { color: var(--gold-2); }
+.reel-name.leah { color: var(--gold-4); }
+.reel-time {
+    font-size: 0.55rem;
+    color: var(--ink-faint);
+    margin-top: 0.3rem;
+    text-align: right;
+}
+.reel-bubble.guest .reel-time { color: rgba(240,237,232,0.5); }
+.reel-category {
+    display: inline-block;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-3);
+    margin-top: 0.5rem;
+}
+.reel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+.reel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.reel-dot.active {
+    background: var(--gold-3);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Rest of existing styles preserved */
+.cursor {
+    width: 5px; height: 5px;
+    background: var(--gold-2);
+    border-radius: 50%;
+    position: fixed; pointer-events: none;
+    z-index: 10001;
+    transition: width 0.2s, height 0.2s;
+    mix-blend-mode: screen;
+}
+.cursor-follower {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(212,167,44,0.5);
+    border-radius: 50%;
+    position: fixed; pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.18s cubic-bezier(0.23,1,0.32,1), width 0.25s, height 0.25s, opacity 0.3s;
+}
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-right { opacity: 0; transform: translateX(48px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+h1 { font-size: clamp(3.4rem, 7.2vw, 6.8rem); line-height: 1.02; font-weight: 600; letter-spacing: -0.03em; }
+h2 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.14; font-weight: 500; letter-spacing: -0.02em; }
+.gold-text { background: var(--gold-metal); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.section-label { font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 4.5px; text-transform: uppercase; color: var(--gold-3); font-weight: 500; }
+.divider-gold { width: 56px; height: 1px; background: var(--gold-metal-flat); margin: 1.5rem auto; box-shadow: 0 0 8px rgba(212,167,44,0.3); }
+
+.btn {
+    display: inline-block; padding: 0.95rem 2.4rem;
+    text-decoration: none; font-weight: 600;
+    letter-spacing: 1.8px; cursor: pointer; border: none;
+    font-size: 0.68rem; text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.38s cubic-bezier(0.23,1,0.32,1);
+}
+.btn-gold {
+    background: var(--gold-metal);
+    color: var(--obsidian);
+    box-shadow: 0 4px 24px rgba(184,134,11,0.28), inset 0 1px 0 rgba(255,245,180,0.6);
+}
+.btn-gold:hover { box-shadow: 0 8px 40px rgba(184,134,11,0.45); transform: translateY(-2px); }
+.btn-outline-gold {
+    background: transparent;
+    color: var(--gold-2);
+    border: 1px solid var(--gold-3);
+}
+.btn-outline-gold:hover { background: rgba(212,167,44,0.08); border-color: var(--gold-2); transform: translateY(-2px); }
+
+.nav {
+    position: fixed; top: 0; width: 100%;
+    padding: 1.4rem 5%; z-index: 1000;
+    background: rgba(8,8,10,0.85);
+    backdrop-filter: blur(24px) saturate(1.6);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: all 0.4s ease;
+}
+.nav.scrolled { padding: 0.9rem 5%; background: rgba(8,8,10,0.97); }
+.nav-container { max-width: 1440px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo-wrap { text-decoration: none; display: flex; flex-direction: column; }
+.logo-main { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 600; line-height: 1; }
+.logo-main .logo-gold { background: var(--gold-metal-flat); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.logo-main .logo-white { color: var(--white); }
+.logo-sub { font-size: 0.58rem; letter-spacing: 2.5px; color: var(--steel); margin-top: 0.25rem; text-transform: uppercase; font-weight: 300; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--steel-light); font-size: 0.7rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold-2); }
+.nav-cta { background: transparent !important; border: 1px solid var(--gold-4) !important; color: var(--gold-2) !important; padding: 0.55rem 1.4rem; }
+.nav-cta:hover { background: rgba(212,167,44,0.1) !important; border-color: var(--gold-2) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; }
+.hamburger span { display: block; width: 22px; height: 1px; background: var(--pearl); }
+
+.hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 9rem 5% 5rem;
+    position: relative;
+    background: radial-gradient(ellipse 80% 60% at 20% 30%, rgba(184,134,11,0.04) 0%, transparent 70%);
+}
+.hero-container { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+.hero-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
+.hero-eyebrow-line { width: 36px; height: 1px; background: var(--gold-metal-flat); }
+.hero-desc { font-size: 1.05rem; color: var(--steel-light); margin: 1.8rem 0; line-height: 1.85; max-width: 510px; font-weight: 300; }
+.hero-stats { display: flex; gap: 3rem; margin: 2.5rem 0; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.9rem; font-weight: 600; line-height: 1; background: var(--gold-metal); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-lbl { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 2px; color: var(--steel); margin-top: 0.3rem; font-weight: 300; }
+.hero-cta { display: flex; gap: 1.2rem; align-items: center; margin-top: 0.5rem; flex-wrap: wrap; }
+
+/* Chat Interface */
+.chat-shell {
+    background: linear-gradient(145deg, #FDFCF8 0%, #F5F0E8 40%, #EDE6D8 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(184,134,11,0.2);
+    box-shadow: 0 32px 80px -20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,245,180,0.5);
+}
+.chat-bar {
+    background: linear-gradient(180deg, #F5D97A 0%, #D4A72C 30%, #B8860B 55%, #C9A030 75%, #E8C050 90%, #D4A72C 100%);
+    padding: 0.85rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,245,180,0.7);
+}
+.chat-dot { width: 10px; height: 10px; border-radius: 50%; }
+.chat-dot.r { background: radial-gradient(circle at 35% 35%, #FF8080, #CC2222); }
+.chat-dot.y { background: radial-gradient(circle at 35% 35%, #FFDD60, #CC8800); }
+.chat-dot.g { background: radial-gradient(circle at 35% 35%, #60DD60, #1A8800); }
+.chat-bar-title {
+    margin-left: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(26,16,0,0.75);
+}
+.chat-status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    color: rgba(26,16,0,0.6);
+}
+.chat-status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22AA44;
+    box-shadow: 0 0 6px rgba(34,170,68,0.7);
+    animation: pulse-green 2s ease-in-out infinite;
+}
+@keyframes pulse-green { 0%,100% { box-shadow: 0 0 4px rgba(34,170,68,0.6); } 50% { box-shadow: 0 0 12px rgba(34,170,68,0.9); } }
+.chat-body {
+    background: linear-gradient(160deg, #FDFCF8 0%, #F8F3EA 100%);
+    padding: 1.8rem;
+    min-height: 420px;
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.chat-msg-row { display: flex; gap: 0.75rem; align-items: flex-end; }
+.chat-msg-row.guest { flex-direction: row-reverse; }
+.chat-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+.avatar-leah {
+    background: var(--gold-metal);
+    color: var(--obsidian);
+    box-shadow: 0 2px 8px rgba(184,134,11,0.35);
+}
+.avatar-guest {
+    background: linear-gradient(135deg, #E8E0D0, #D0C8B8);
+    color: var(--ink-mid);
+}
+.chat-bubble {
+    max-width: 78%;
+    padding: 0.85rem 1.1rem;
+    line-height: 1.65;
+    font-size: 0.84rem;
+}
+.bubble-leah {
+    background: #FFFFFF;
+    color: var(--ink);
+    border: 1px solid rgba(184,134,11,0.12);
+    border-radius: 16px 16px 16px 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.bubble-guest {
+    background: linear-gradient(135deg, #2A2218, #1A1610);
+    color: var(--pearl);
+    border-radius: 16px 16px 4px 16px;
+}
+.bubble-leah-name {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-4);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+.bubble-time {
+    font-size: 0.58rem;
+    color: var(--ink-faint);
+    text-align: right;
+    margin-top: 0.25rem;
+}
+.chat-footer {
+    background: linear-gradient(180deg, #F2EBE0 0%, #EDE4D5 100%);
+    border-top: 1px solid rgba(184,134,11,0.12);
+    padding: 0.9rem 1.3rem;
+    display: flex;
+    gap: 0.8rem;
+}
+.chat-input {
+    flex: 1;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(184,134,11,0.15);
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    outline: none;
+}
+.chat-send {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: var(--gold-metal);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--obsidian);
+}
+.philosophy {
+    padding: 9rem 5%;
+    background: linear-gradient(160deg, var(--pearl-warm) 0%, var(--pearl-mid) 50%, var(--pearl-deep) 100%);
+}
+.philosophy-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1px;
+    background: rgba(184,134,11,0.12);
+}
+.philosophy-card {
+    background: linear-gradient(160deg, #FDFCF8, #F5F0E8);
+    padding: 3rem 2.5rem;
+    transition: background 0.4s;
+}
+.philosophy-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(184,134,11,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.8rem;
+    color: var(--gold-4);
+}
+.philosophy-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--ink); }
+.philosophy-card p { color: var(--ink-light); font-size: 0.87rem; line-height: 1.78; font-weight: 300; }
+.capabilities {
+    padding: 9rem 5%;
+    background: var(--obsidian-2);
+}
+.capabilities-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem;
+}
+.capability-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+    transition: all 0.4s;
+}
+.cap-icon-wrap {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,245,180,0.08), rgba(184,134,11,0.06));
+    border: 1px solid rgba(184,134,11,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.3rem;
+    font-size: 1.2rem;
+    color: var(--gold-2);
+}
+.capability-card h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--white); }
+.capability-card p { color: var(--steel); font-size: 0.82rem; line-height: 1.65; font-weight: 300; }
+.workflow {
+    padding: 9rem 5%;
+    background: linear-gradient(160deg, var(--pearl-warm) 0%, #F0E8D8 100%);
+}
+.workflow-container {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+}
+.workflow-steps { list-style: none; margin-top: 3rem; }
+.workflow-step { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2.5rem; }
+.step-num {
+    width: 2.8rem; height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid rgba(184,134,11,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold-4);
+}
+.workflow-img-wrap { position: relative; overflow: hidden; border-radius: 16px; }
+.workflow-img { width: 100%; height: 480px; object-fit: cover; filter: brightness(0.72); }
+.consultation {
+    padding: 9rem 5%;
+    background: radial-gradient(ellipse 80% 70% at 50% 50%, var(--obsidian-3), var(--obsidian));
+}
+.consultation-container { max-width: 760px; margin: 0 auto; text-align: center; }
+.consultation-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(184,134,11,0.22);
+    padding: 3.5rem; margin-top: 2.5rem;
+}
+.consult-list { list-style: none; text-align: left; max-width: 380px; margin: 0 auto 2.5rem; }
+.consult-list li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.1rem; color: var(--steel-light); }
+.consult-list i { color: var(--gold-2); }
+.contact {
+    padding: 9rem 5%;
+    background: linear-gradient(160deg, #FDFCF8 0%, var(--pearl-warm) 50%, var(--pearl-mid) 100%);
+}
+.contact-container { max-width: 800px; margin: 0 auto; }
+.email-card {
+    display: flex; align-items: center; gap: 1.6rem;
+    background: linear-gradient(145deg, #FFFFFF, #F8F3EA);
+    border: 1px solid rgba(184,134,11,0.2);
+    padding: 2rem 3rem;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+.email-icon-wrap {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--gold-metal);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--obsidian);
+}
+.email-lbl { font-size: 0.58rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink-faint); display: block; }
+.email-val { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--ink-mid); }
+.contact-trust { display: flex; gap: 2.5rem; justify-content: center; margin-top: 2rem; }
+.trust-item { display: flex; align-items: center; gap: 0.6rem; color: var(--ink-light); font-size: 0.78rem; }
+.legal-disclaimer {
+    padding: 2.5rem 5%;
+    background: var(--obsidian-2);
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+.disclaimer-container { max-width: 1200px; margin: 0 auto; font-size: 0.67rem; color: rgba(138,138,154,0.55); text-align: center; }
+.footer {
+    padding: 4rem 5% 2rem;
+    background: #040406;
+}
+.footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr repeat(4,1fr); gap: 2.5rem; }
+.footer-links h4 { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; color: var(--pearl-dim); }
+.footer-links a { display: block; color: var(--steel); text-decoration: none; font-size: 0.78rem; margin-bottom: 0.6rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold-2); }
+.footer-bottom { text-align: center; padding-top: 2.5rem; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.67rem; color: rgba(138,138,154,0.4); }
+.cookie-consent {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(8,8,10,0.97);
+    border-top: 1px solid rgba(184,134,11,0.15);
+    backdrop-filter: blur(24px);
+    color: var(--pearl); padding: 1.2rem 5%;
+    z-index: 10000; display: flex;
+    justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+}
+.cookie-consent.show { transform: translateY(0); }
+.cookie-btn {
+    background: transparent; border: 1px solid rgba(184,134,11,0.35);
+    color: var(--gold-2); padding: 0.5rem 1.3rem; cursor: pointer;
+    font-size: 0.68rem; transition: all 0.3s;
+}
+.cookie-btn-accept { background: var(--gold-metal); color: var(--obsidian); border: none; }
+.legal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 20000; backdrop-filter: blur(10px); align-items: center; justify-content: center; }
+.legal-overlay.active { display: flex; }
+.legal-popup { background: var(--obsidian-3); border: 1px solid var(--border-gold); width: 90%; max-width: 680px; max-height: 82vh; overflow-y: auto; padding: 2.5rem; position: relative; }
+.popup-close { background: none; border: 1px solid var(--border-dark); color: var(--steel); width: 36px; height: 36px; cursor: pointer; }
+@media (max-width: 1100px) { .capabilities-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 900px) {
+    .hero-container, .workflow-container { grid-template-columns: 1fr; gap: 3rem; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    .hamburger { display: flex; }
+    .nav-links { display: none; position: fixed; top: 0; right: 0; width: 280px; height: 100vh; background: var(--obsidian-3); border-left: 1px solid var(--border-gold); flex-direction: column; gap: 0; padding: 5rem 2rem 2rem; }
+    .nav-links.open { display: flex; }
+}
+@media (max-width: 640px) {
+    .capabilities-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+}
+    </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<div class="legal-overlay" id="legalOverlay">
+    <div class="legal-popup" id="legalPopup">
+        <div class="legal-popup-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <h2 id="legalTitle" style="color: var(--white);"></h2>
+            <button class="popup-close" id="legalClose" style="background: none; border: 1px solid rgba(255,255,255,0.1); color: var(--steel); width: 36px; height: 36px; cursor: pointer;">&times;</button>
+        </div>
+        <div class="legal-popup-body" id="legalBody" style="color: var(--steel-light);"></div>
+    </div>
+</div>
+
+<div class="cookie-consent" id="cookieConsent">
+    <p>We employ cookies to refine your experience. By continuing, you consent to their use. <a href="#" data-legal="cookies" style="color: var(--gold-2);">Learn more</a></p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept</button>
+        <button class="cookie-btn" id="declineCookies">Decline</button>
+    </div>
+</div>
+
+<nav class="nav" id="mainNav">
+    <div class="nav-container">
+        <a href="#" class="logo-wrap">
+            <div class="logo-main">
+                <span class="logo-white">SOLUTION</span><span class="logo-gold">a4U</span>
+            </div>
+            <div class="logo-sub">Bespoke Automation Architecture</div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#workflow">Methodology</a></li>
+            <li><a href="#consultation">Consultation</a></li>
+            <li><a href="#contact" class="nav-cta">Schedule Call</a></li>
+            <li><button class="lang-toggle" id="langToggle">ES / EN</button></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-container">
+        <div>
+            <div class="hero-eyebrow reveal">
+                <div class="hero-eyebrow-line"></div>
+                <span class="section-label" data-en="The Architecture of Hospitality" data-es="La Arquitectura de la Hospitalidad">The Architecture of Hospitality</span>
+            </div>
+            <h1 class="reveal d1">LEAH <span class="gold-text">Bot</span><br><span data-en="Luxury AI" data-es="IA de Lujo">Luxury AI</span><br><span data-en="Concierge" data-es="Conserje">Concierge</span></h1>
+            <p class="hero-desc reveal d2" data-en="A perpetual hospitality operation — configured with precision, refined continuously, conducting itself with discretion while hosts attend to what genuinely demands their presence." data-es="Una operación de hospitalidad perpetua — configurada con precisión, refinada continuamente, actuando con discreción mientras los anfitriones atienden lo que genuinamente demanda su presencia.">A perpetual hospitality operation — configured with precision, refined continuously, conducting itself with discretion while hosts attend to what genuinely demands their presence.</p>
+            <div class="hero-stats reveal d3">
+                <div><div class="stat-num">90%</div><div class="stat-lbl" data-en="Reduction in repetition" data-es="Reducción de repetición">Reduction in repetition</div></div>
+                <div><div class="stat-num">24/7</div><div class="stat-lbl" data-en="Perpetual presence" data-es="Presencia perpetua">Perpetual presence</div></div>
+                <div><div class="stat-num">15min</div><div class="stat-lbl" data-en="Time to deployment" data-es="Tiempo de despliegue">Time to deployment</div></div>
+            </div>
+            <div class="hero-cta reveal d4">
+                <a href="#contact" class="btn btn-gold" data-en="Complimentary Consultation" data-es="Consulta Gratuita">Complimentary Consultation</a>
+                <a href="#capabilities" class="btn btn-outline-gold" data-en="Explore Capabilities" data-es="Explorar Capacidades">Explore Capabilities</a>
+            </div>
+        </div>
+        <div class="chat-shell reveal-right d2">
+            <div class="chat-bar">
+                <div class="chat-dot r"></div>
+                <div class="chat-dot y"></div>
+                <div class="chat-dot g"></div>
+                <div class="chat-bar-title">LEAH — Concierge</div>
+                <div class="chat-status"><div class="chat-status-dot"></div>Active</div>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg-row">
+                    <div class="avatar-leah chat-avatar">L</div>
+                    <div><div class="bubble-leah chat-bubble"><div class="bubble-leah-name">LEAH · Concierge</div>Property profile loaded — Villa Lumina, Miami Beach. Six languages active. How may I attend to your guests?<div class="bubble-time">Just now</div></div></div>
+                </div>
+                <div class="chat-msg-row guest">
+                    <div class="avatar-guest chat-avatar">J</div>
+                    <div><div class="bubble-guest chat-bubble">Juan<div class="bubble-time">Just now</div></div></div>
+                </div>
+                <div class="chat-msg-row">
+                    <div class="avatar-leah chat-avatar">L</div>
+                    <div><div class="bubble-leah chat-bubble"><div class="bubble-leah-name">LEAH · Concierge</div>Juan — what a distinguished name. Welcome to Villa Lumina. I am entirely at your service. How may I elevate your stay?<div class="bubble-time">Just now</div></div></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Inquire of LEAH…" autocomplete="off">
+                <button class="chat-send" id="chatSend" aria-label="Send"><i class="fas fa-arrow-up"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCROLLING CHAT REELS SECTION - NEW FEATURE -->
+<section class="chat-reels">
+    <div class="chat-reels-container">
+        <div class="chat-reels-header">
+            <span class="section-label" data-en="Real Guest Interactions" data-es="Interacciones Reales con Huéspedes">Real Guest Interactions</span>
+            <h2 data-en="See LEAH in Action" data-es="Vea a LEAH en Acción">See LEAH in Action</h2>
+            <div class="divider-gold"></div>
+            <p style="color: var(--steel-light); max-width: 600px; margin: 0 auto;" data-en="Watch LEAH handle real guest situations — from simple questions to urgent matters" data-es="Vea a LEAH manejar situaciones reales de huéspedes — desde preguntas simples hasta asuntos urgentes">Watch LEAH handle real guest situations — from simple questions to urgent matters</p>
+        </div>
+        <div class="chat-reels-carousel" id="chatReelsCarousel">
+            <!-- Reels will be injected by JavaScript -->
+        </div>
+        <div class="reel-indicators" id="reelIndicators"></div>
+    </div>
+</section>
+
+<section id="philosophy" class="philosophy">
+    <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-label" data-en="Our Philosophy" data-es="Nuestra Filosofía">Our Philosophy</span>
+        <h2 class="reveal d1" data-en="Crafting technology that elevates human connection" data-es="Creando tecnología que eleva la conexión humana">Crafting technology that elevates human connection</h2>
+        <div class="divider-gold reveal d2"></div>
+        <p class="reveal d3" style="color: var(--ink-light); max-width: 600px; margin: 0 auto;" data-en="We do not build features. We architect presences — invisible, anticipatory, and perpetually refined." data-es="No construimos funciones. Arquitectamos presencias — invisibles, anticipatorias y perpetuamente refinadas.">We do not build features. We architect presences — invisible, anticipatory, and perpetually refined.</p>
+    </div>
+    <div class="philosophy-grid">
+        <div class="philosophy-card reveal d1">
+            <div class="philosophy-icon"><i class="fas fa-gem"></i></div>
+            <h3 data-en="Anticipatory Intelligence" data-es="Inteligencia Anticipatoria">Anticipatory Intelligence</h3>
+            <p data-en="We do not architect for what guests articulate — we design for what they have not yet recognized they require." data-es="No arquitectamos para lo que los huéspedes articulan — diseñamos para lo que aún no han reconocido que necesitan.">We do not architect for what guests articulate — we design for what they have not yet recognized they require.</p>
+        </div>
+        <div class="philosophy-card reveal d2">
+            <div class="philosophy-icon"><i class="fas fa-feather-alt"></i></div>
+            <h3 data-en="Invisible Infrastructure" data-es="Infraestructura Invisible">Invisible Infrastructure</h3>
+            <p data-en="Exceptional technology is indistinguishable from intuition. LEAH conducts itself with such discretion that guests experience only the warmth of hospitality." data-es="La tecnología excepcional es indistinguible de la intuición. LEAH actúa con tal discreción que los huéspedes experimentan solo la calidez de la hospitalidad.">Exceptional technology is indistinguishable from intuition. LEAH conducts itself with such discretion that guests experience only the warmth of hospitality.</p>
+        </div>
+        <div class="philosophy-card reveal d3">
+            <div class="philosophy-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <h3 data-en="Humanity at Scale" data-es="Humanidad a Escala">Humanity at Scale</h3>
+            <p data-en="Every exchange feels singular because the architecture remembers. Names, preferences, prior conversations — preserved with the fidelity of a seasoned concierge." data-es="Cada intercambio se siente singular porque la arquitectura recuerda. Nombres, preferencias, conversaciones previas — preservadas con la fidelidad de un conserje experimentado.">Every exchange feels singular because the architecture remembers. Names, preferences, prior conversations — preserved with the fidelity of a seasoned concierge.</p>
+        </div>
+    </div>
+</section>
+
+<section id="capabilities" class="capabilities">
+    <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-label" data-en="Capabilities" data-es="Capacidades">Capabilities</span>
+        <h2 style="color: var(--white);" data-en="What LEAH Attends To" data-es="A Qué Atiende LEAH">What LEAH Attends To</h2>
+        <div class="divider-gold"></div>
+        <p style="color: var(--steel);" data-en="No rhetoric. Precise, demonstrable capabilities." data-es="Sin retórica. Capacidades precisas y demostrables.">No rhetoric. Precise, demonstrable capabilities.</p>
+    </div>
+    <div class="capabilities-grid">
+        <div class="capability-card reveal d1"><div class="cap-icon-wrap"><i class="fas fa-wifi"></i></div><h3 data-en="Access & Credentials" data-es="Acceso y Credenciales">Access & Credentials</h3><p data-en="Network credentials, entry codes, and arrival protocols — delivered precisely when required" data-es="Credenciales de red, códigos de entrada y protocolos de llegada — entregados precisamente cuando se requieren">Network credentials, entry codes, and arrival protocols — delivered precisely when required</p></div>
+        <div class="capability-card reveal d2"><div class="cap-icon-wrap"><i class="fas fa-utensils"></i></div><h3 data-en="Curated Local Intelligence" data-es="Inteligencia Local Curada">Curated Local Intelligence</h3><p data-en="Your personally vetted dining establishments, cultural attractions, and undiscovered gems" data-es="Sus establecimientos gastronómicos, atracciones culturales y joyas descubiertas personalmente">Your personally vetted dining establishments, cultural attractions, and undiscovered gems</p></div>
+        <div class="capability-card reveal d3"><div class="cap-icon-wrap"><i class="fas fa-bell-concierge"></i></div><h3 data-en="Intelligent Escalation" data-es="Escalado Inteligente">Intelligent Escalation</h3><p data-en="LEAH discerns routine inquiries from situations warranting your immediate attention" data-es="LEAH discierne consultas rutinarias de situaciones que merecen su atención inmediata">LEAH discerns routine inquiries from situations warranting your immediate attention</p></div>
+        <div class="capability-card reveal d4"><div class="cap-icon-wrap"><i class="fas fa-language"></i></div><h3 data-en="Polyglot Fluency" data-es="Fluidez Políglota">Polyglot Fluency</h3><p data-en="English, Spanish, French, Italian, Portuguese, German — rendered with native nuance" data-es="Inglés, español, francés, italiano, portugués, alemán — con matices nativos">English, Spanish, French, Italian, Portuguese, German — rendered with native nuance</p></div>
+    </div>
+</section>
+
+<section id="workflow" class="workflow">
+    <div class="workflow-container">
+        <div>
+            <span class="section-label" data-en="Methodology" data-es="Metodología">Methodology</span>
+            <h2 data-en="Workflow Assessment" data-es="Evaluación de Flujo de Trabajo">Workflow <span class="gold-text">Assessment</span></h2>
+            <div class="divider-gold" style="margin:1.5rem 0;"></div>
+            <p style="color:var(--ink-light);font-weight:300;font-size:0.95rem;" data-en="Before we design, we listen with discipline. Your existing systems, operational constraints, and aspirations — each assessed to identify where intelligent automation yields its most consequential dividend." data-es="Antes de diseñar, escuchamos con disciplina. Sus sistemas existentes, restricciones operativas y aspiraciones — cada uno evaluado para identificar dónde la automatización inteligente produce su dividendo más significativo.">Before we design, we listen with discipline. Your existing systems, operational constraints, and aspirations — each assessed to identify where intelligent automation yields its most consequential dividend.</p>
+            <ul class="workflow-steps">
+                <li class="workflow-step reveal d2"><div class="step-num">01</div><div class="step-content"><h4 data-en="Discovery Dialogue" data-es="Diálogo de Descubrimiento">Discovery Dialogue</h4><p data-en="A substantive exploration of your current infrastructure, workflows, and friction points" data-es="Una exploración sustancial de su infraestructura actual, flujos de trabajo y puntos de fricción">A substantive exploration of your current infrastructure, workflows, and friction points</p></div></li>
+                <li class="workflow-step reveal d3"><div class="step-num">02</div><div class="step-content"><h4 data-en="Operational Audit" data-es="Auditoría Operativa">Operational Audit</h4><p data-en="Systematic identification of bottlenecks, redundant processes, and time-consuming tasks" data-es="Identificación sistemática de cuellos de botella, procesos redundantes y tareas que consumen tiempo">Systematic identification of bottlenecks, redundant processes, and time-consuming tasks</p></div></li>
+                <li class="workflow-step reveal d4"><div class="step-num">03</div><div class="step-content"><h4 data-en="Architecture Design" data-es="Diseño de Arquitectura">Architecture Design</h4><p data-en="A bespoke automation blueprint — engineered to the precise contours of your operation" data-es="Un plano de automatización a medida — diseñado para los contornos precisos de su operación">A bespoke automation blueprint — engineered to the precise contours of your operation</p></div></li>
+                <li class="workflow-step reveal d5"><div class="step-num">04</div><div class="step-content"><h4 data-en="Deployment & Refinement" data-es="Despliegue y Refinamiento">Deployment & Refinement</h4><p data-en="Live within fifteen minutes. The system then learns, adapts, and improves with each interaction" data-es="Activo en quince minutos. El sistema luego aprende, se adapta y mejora con cada interacción">Live within fifteen minutes. The system then learns, adapts, and improves with each interaction</p></div></li>
+            </ul>
+        </div>
+        <div class="workflow-img-wrap reveal-right"><img class="workflow-img" src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Luxury property interior"></div>
+    </div>
+</section>
+
+<section id="consultation" class="consultation">
+    <div class="consultation-container">
+        <span class="section-label" data-en="No Obligation" data-es="Sin Obligación">No Obligation</span>
+        <h2 data-en="Complimentary Consultation" data-es="Consulta Gratuita">Complimentary <span class="gold-text">Consultation</span></h2>
+        <div class="divider-gold"></div>
+        <p style="color:var(--steel);" data-en="No commercial pressure. No prescriptive agenda. Simply a candid conversation about what you are building." data-es="Sin presión comercial. Sin agenda prescriptiva. Simplemente una conversación sincera sobre lo que está construyendo.">No commercial pressure. No prescriptive agenda. Simply a candid conversation about what you are building.</p>
+        <div class="consultation-card">
+            <div class="consult-heading" style="font-size:0.62rem;letter-spacing:3px;color:var(--steel);margin-bottom:1.6rem;" data-en="What to anticipate" data-es="Qué esperar">What to anticipate</div>
+            <ul class="consult-list">
+                <li><i class="fas fa-check"></i> <span data-en="A thirty-minute discovery dialogue at your convenience" data-es="Un diálogo de descubrimiento de treinta minutos a su conveniencia">A thirty-minute discovery dialogue at your convenience</span></li>
+                <li><i class="fas fa-check"></i> <span data-en="A thorough review of your current operational workflows" data-es="Una revisión exhaustiva de sus flujos de trabajo operativos actuales">A thorough review of your current operational workflows</span></li>
+                <li><i class="fas fa-check"></i> <span data-en="A bespoke automation roadmap, crafted for your context" data-es="Una hoja de ruta de automatización a medida, diseñada para su contexto">A bespoke automation roadmap, crafted for your context</span></li>
+                <li><i class="fas fa-check"></i> <span data-en="An honest assessment — no proposal unless the fit is genuine" data-es="Una evaluación honesta — ninguna propuesta a menos que la compatibilidad sea genuina">An honest assessment — no proposal unless the fit is genuine</span></li>
+            </ul>
+            <a href="mailto:hcaro@solution4u.com?subject=Consultation Request — LEAH Bot" class="btn btn-gold" data-en="Reserve Your Session" data-es="Reserve su Sesión">Reserve Your Session →</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="contact-container">
+        <div style="text-align: center;">
+            <span class="section-label" data-en="Direct Correspondence" data-es="Correspondencia Directa">Direct Correspondence</span>
+            <h2 data-en="Let Us Build Something Extraordinary" data-es="Permítanos Construir Algo Extraordinario">Let Us Build Something <span class="gold-text">Extraordinary</span></h2>
+            <div class="divider-gold"></div>
+            <p style="color:var(--ink-light);" data-en="Share your vision. We respond with substance within twenty-four hours." data-es="Comparta su visión. Respondemos con sustancia en veinticuatro horas.">Share your vision. We respond with substance within twenty-four hours.</p>
+        </div>
+        <div class="email-cta-block" style="margin-top: 3rem;">
+            <a href="mailto:hcaro@solution4u.com?subject=LEAH Bot — Enquiry" class="email-card">
+                <div class="email-icon-wrap"><i class="fas fa-envelope"></i></div>
+                <div class="email-card-text">
+                    <span class="email-lbl" data-en="Write to us directly" data-es="Escríbanos directamente">Write to us directly</span>
+                    <span class="email-val">hcaro@solution4u.com</span>
+                </div>
+            </a>
+            <div class="contact-trust">
+                <div class="trust-item"><i class="fas fa-clock"></i> <span data-en="Response within 24 hours" data-es="Respuesta en 24 horas">Response within 24 hours</span></div>
+                <div class="trust-sep" style="width:1px; height:16px; background:rgba(184,134,11,0.2);"></div>
+                <div class="trust-item"><i class="fas fa-shield-alt"></i> <span data-en="No obligation, no pressure" data-es="Sin obligación, sin presión">No obligation, no pressure</span></div>
+                <div class="trust-sep"></div>
+                <div class="trust-item"><i class="fas fa-rocket"></i> <span data-en="Operational in 15 minutes" data-es="Operativo en 15 minutos">Operational in 15 minutes</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="legal-disclaimer">
+    <div class="disclaimer-container">
+        <p><strong data-en="Legal Disclaimer" data-es="Aviso Legal">Legal Disclaimer</strong></p>
+        <p data-en="LEAH Bot is an AI-powered assistant designed to support short-term rental hosts. While LEAH manages routine guest communications, hosts retain full responsibility for their properties, guest interactions, and all critical decisions." data-es="LEAH Bot es un asistente impulsado por IA diseñado para apoyar a anfitriones de alquiler a corto plazo. Mientras LEAH gestiona comunicaciones rutinarias con huéspedes, los anfitriones mantienen la responsabilidad total de sus propiedades, interacciones con huéspedes y todas las decisiones críticas.">LEAH Bot is an AI-powered assistant designed to support short-term rental hosts. While LEAH manages routine guest communications, hosts retain full responsibility for their properties, guest interactions, and all critical decisions.</p>
+        <p data-en="No Guarantees: Outcomes vary based on property type, guest conduct, and host engagement. LEAH is an instrument of assistance, not a guarantee of specific results." data-es="Sin Garantías: Los resultados varían según el tipo de propiedad, la conducta del huésped y la participación del anfitrión. LEAH es un instrumento de asistencia, no una garantía de resultados específicos.">No Guarantees: Outcomes vary based on property type, guest conduct, and host engagement. LEAH is an instrument of assistance, not a guarantee of specific results.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand"><h4><span class="fb-white">SOLUTION</span><span class="fb-gold">a4U</span></h4><div class="fb-sub">Bespoke Automation Architecture</div><p>hcaro@solution4u.com</p></div>
+        <div class="footer-links"><h4 data-en="Products" data-es="Productos">Products</h4><a href="#">LEAH Bot — AI Concierge</a><a href="#">Custom Automation</a><a href="#">Workflow Assessment</a></div>
+        <div class="footer-links"><h4 data-en="Legal" data-es="Legal">Legal</h4><a href="#" data-legal="privacy">Privacy Policy</a><a href="#" data-legal="terms">Terms of Service</a><a href="#" data-legal="cookies">Cookie Policy</a><a href="#" data-legal="eula">EULA</a><a href="#" data-legal="accessibility">Accessibility</a></div>
+        <div class="footer-links"><h4 data-en="Policies" data-es="Políticas">Policies</h4><a href="#" data-legal="refund">Refund Policy</a><a href="#" data-legal="disclaimer">Disclaimer</a><a href="#" data-legal="copyright">Copyright Notice</a></div>
+        <div class="footer-links"><h4 data-en="Connect" data-es="Conectar">Connect</h4><a href="#consultation">Free Consultation</a><a href="#contact">Contact Us</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 SOLUTIONa4U — All rights reserved. Crafted with precision.</p><p>For qualifying small businesses: complimentary site development in exchange for revenue partnership. Enquire within.</p></div>
+</footer>
+
+<script>
+// ============================================================================
+// SCROLLING CHAT REELS - 8 DIFFERENT CONVERSATIONS WITH DIFFERENT GUESTS
+// ============================================================================
+const chatReels = [
+    { guest: "Juan", guestMsg: "what's the wifi?", leahMsg: "The WiFi network is VillaLumina_Guest and the password is MiamiSun2024. The router is in the living room cabinet. Is there anything else I can assist you with?", category: "WiFi & Access", time: "10:32 PM" },
+    { guest: "Maria", guestMsg: "what time is check-in?", leahMsg: "Check-in is at 4:00 PM. Your access code is 7742#. Would you like me to also share the WiFi details or go over the house rules?", category: "Check-in", time: "2:15 PM" },
+    { guest: "Alexander", guestMsg: "the toilet is not flushing", leahMsg: "I sincerely apologise for the inconvenience. I am alerting the property manager at this very moment. You may expect contact within thirty minutes. Your comfort is our utmost priority.", category: "Maintenance Escalation", time: "11:47 PM" },
+    { guest: "Elena", guestMsg: "fire alarm", leahMsg: "If this is a life-threatening emergency, please contact 911 immediately. I am simultaneously alerting the property manager. Please remain calm — assistance is forthcoming within 15 minutes.", category: "Emergency Escalation", time: "3:22 AM" },
+    { guest: "William", guestMsg: "recommend a restaurant for dinner", leahMsg: "For exceptional dining, I would recommend: Zuma Miami for refined Japanese cuisine, Joe's Stone Crab for an iconic Miami seafood experience, or Stubborn Seed — a Michelin-recognised establishment offering exceptional contemporary fare.", category: "Local Recommendations", time: "7:15 PM" },
+    { guest: "Sofia", guestMsg: "can I get mid-stay cleaning?", leahMsg: "I shall coordinate with the host regarding mid-stay housekeeping arrangements and communicate their response to you directly. You will hear from me shortly. The service is $85 with 24 hours notice.", category: "Upsell Service", time: "10:05 AM" },
+    { guest: "David", guestMsg: "¿hablas español?", leahMsg: "Con mucho gusto. Soy LEAH, su concierge personal. Hablo español con fluidez. ¿En qué puedo asistirle el día de hoy? Puedo ayudarle con WiFi, reglas de la casa, estacionamiento y recomendaciones.", category: "Multi-Language", time: "8:30 PM" },
+    { guest: "Isabella", guestMsg: "what are the quiet hours?", leahMsg: "The residence observes quiet hours between 10:00 PM and 8:00 AM. This ensures all guests enjoy a peaceful stay. Private driveway parking is available exclusively for your use.", category: "House Rules", time: "9:15 PM" }
+];
+
+let currentReelIndex = 0;
+let reelInterval;
+
+function createReelHTML(reel, index) {
+    return `
+        <div class="chat-reel ${index === 0 ? 'active' : ''}" data-index="${index}">
+            <div class="reel-messages">
+                <div class="reel-message guest">
+                    <div class="reel-bubble guest">
+                        <div class="reel-name guest">${reel.guest}</div>
+                        ${reel.guestMsg}
+                        <div class="reel-time">${reel.time}</div>
+                    </div>
+                </div>
+                <div class="reel-message leah">
+                    <div class="reel-bubble leah">
+                        <div class="reel-name leah">LEAH · Concierge</div>
+                        ${reel.leahMsg}
+                        <div class="reel-time">${reel.time}</div>
+                    </div>
+                </div>
+                <div class="reel-category">✦ ${reel.category} ✦</div>
+            </div>
+        </div>
+    `;
+}
+
+function buildReels() {
+    const carousel = document.getElementById('chatReelsCarousel');
+    const indicators = document.getElementById('reelIndicators');
+    if (!carousel) return;
+    
+    carousel.innerHTML = '';
+    indicators.innerHTML = '';
+    
+    chatReels.forEach((reel, i) => {
+        carousel.insertAdjacentHTML('beforeend', createReelHTML(reel, i));
+        const dot = document.createElement('div');
+        dot.className = `reel-dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToReel(i));
+        indicators.appendChild(dot);
+    });
+}
+
+function goToReel(index) {
+    const reels = document.querySelectorAll('.chat-reel');
+    const dots = document.querySelectorAll('.reel-dot');
+    if (!reels.length) return;
+    
+    reels[currentReelIndex].classList.remove('active');
+    dots[currentReelIndex].classList.remove('active');
+    
+    currentReelIndex = index;
+    
+    reels[currentReelIndex].classList.add('active');
+    dots[currentReelIndex].classList.add('active');
+    
+    // Reset interval
+    if (reelInterval) clearInterval(reelInterval);
+    reelInterval = setInterval(nextReel, 7000);
+}
+
+function nextReel() {
+    const next = (currentReelIndex + 1) % chatReels.length;
+    goToReel(next);
+}
+
+// Initialize reels and start auto-rotation
+setTimeout(() => {
+    buildReels();
+    reelInterval = setInterval(nextReel, 7000);
+}, 500);
+
+// ============================================================================
+// LANGUAGE TOGGLE (SPANISH/ENGLISH)
+// ============================================================================
+let currentLang = 'en';
+
+function updateLanguage(lang) {
+    const elements = document.querySelectorAll('[data-en][data-es]');
+    elements.forEach(el => {
+        if (lang === 'es' && el.dataset.es) {
+            el.textContent = el.dataset.es;
+        } else if (lang === 'en' && el.dataset.en) {
+            el.textContent = el.dataset.en;
+        }
+    });
+    currentLang = lang;
+}
+
+document.getElementById('langToggle')?.addEventListener('click', () => {
+    const newLang = currentLang === 'en' ? 'es' : 'en';
+    updateLanguage(newLang);
+});
+
+// ============================================================================
+// CURSOR
+// ============================================================================
+const cursor = document.getElementById('cursor');
+const cf = document.getElementById('cursorFollower');
+let mx = 0, my = 0, fx = 0, fy = 0;
+document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    if (cursor) cursor.style.transform = `translate(${mx-2.5}px,${my-2.5}px)`;
+});
+function tick() {
+    fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
+    if (cf) cf.style.transform = `translate(${fx-19}px,${fy-19}px)`;
+    requestAnimationFrame(tick);
+}
+tick();
+document.querySelectorAll('a,button,.philosophy-card,.capability-card,.workflow-step').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor?.classList.add('expanded'); cf?.classList.add('expanded'); });
+    el.addEventListener('mouseleave', () => { cursor?.classList.remove('expanded'); cf?.classList.remove('expanded'); });
+});
+
+// ============================================================================
+// NAV
+// ============================================================================
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', scrollY > 60));
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger?.addEventListener('click', () => navLinks?.classList.toggle('open'));
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// ============================================================================
+// SCROLL REVEAL
+// ============================================================================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal,.reveal-right').forEach(el => observer.observe(el));
+
+// ============================================================================
+// CHAT INTERFACE
+// ============================================================================
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+
+const leahResponses = {
+    'wifi': "The WiFi network is VillaLumina_Guest and the password is MiamiSun2024. The router is in the living room cabinet. May I assist you further?",
+    'password': "The WiFi passphrase is MiamiSun2024. Is there anything else I can do for you?",
+    'check-in': "Check-in is at 4:00 PM. Your access code is 7742#. The property will be fully prepared for your arrival.",
+    'checkout': "Departure is scheduled for 11:00 AM. It has been a privilege hosting you.",
+    'house rules': "Quiet hours: 10:00 PM to 8:00 AM. No gatherings beyond registered guests. Private parking is available.",
+    'pool': "The pool is ready. I can arrange heating with 24 hours notice. Shall I coordinate that for you?",
+    'restaurant': "Zuma Miami (Japanese), Joe's Stone Crab (seafood), or Stubborn Seed (contemporary). Would you like addresses or reservations?",
+    'toilet': "I apologise. I am notifying the property manager immediately. Expect contact within 30 minutes.",
+    'cleaning': "I will coordinate with the host regarding mid-stay cleaning. You will hear from me shortly.",
+    'hello': "Good day. I am LEAH, your dedicated concierge. How may I elevate your stay?",
+    'hola': "Con mucho gusto. Soy LEAH, su concierge. ¿En qué puedo asistirle?",
+    'bonjour': "Bonjour. Je suis LEAH, votre concierge. Comment puis-je vous aider?",
+    'parking': "Private driveway parking is reserved for you. Accommodation for up to two vehicles.",
+    'help': "I am at your service. I can assist with WiFi, access, house protocols, dining recommendations, local attractions, maintenance concerns, and any matter pertaining to your comfort."
+};
+
+function getTime() { return new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }); }
+function getLeahReply(msg) {
+    const l = msg.toLowerCase();
+    for (const [k, v] of Object.entries(leahResponses)) { if (l.includes(k)) return v; }
+    return "I wish to be of service. Could you elaborate? I am equipped to assist with property access, dining, local guidance, and any matter pertaining to your comfort.";
+}
+
+function appendMsg(text, isGuest) {
+    const row = document.createElement('div');
+    row.className = `chat-msg-row${isGuest ? ' guest' : ''}`;
+    if (isGuest) {
+        row.innerHTML = `<div class="avatar-guest chat-avatar">G</div><div><div class="bubble-guest chat-bubble">${text}<div class="bubble-time">${getTime()}</div></div></div>`;
+    } else {
+        row.innerHTML = `<div class="avatar-leah chat-avatar">L</div><div><div class="bubble-leah chat-bubble"><div class="bubble-leah-name">LEAH · Concierge</div>${text}<div class="bubble-time">${getTime()}</div></div></div>`;
+    }
+    chatBody.appendChild(row);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function showTyping() {
+    const el = document.createElement('div');
+    el.className = 'chat-typing'; el.id = 'typingIndicator';
+    el.innerHTML = `<div class="avatar-leah chat-avatar" style="width:32px;height:32px;">L</div><div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+    chatBody.appendChild(el);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+function hideTyping() { const el = document.getElementById('typingIndicator'); if (el) el.remove(); }
+
+function sendMessage() {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    appendMsg(msg, true);
+    chatInput.value = '';
+    showTyping();
+    setTimeout(() => { hideTyping(); appendMsg(getLeahReply(msg), false); }, 800);
+}
+
+chatSend?.addEventListener('click', sendMessage);
+chatInput?.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+
+// ============================================================================
+// COOKIE CONSENT
+// ============================================================================
+const cookieBanner = document.getElementById('cookieConsent');
+if (!localStorage.getItem('cookieConsent')) setTimeout(() => cookieBanner?.classList.add('show'), 1200);
+document.getElementById('acceptCookies')?.addEventListener('click', () => { localStorage.setItem('cookieConsent','accepted'); cookieBanner?.classList.remove('show'); });
+document.getElementById('declineCookies')?.addEventListener('click', () => { localStorage.setItem('cookieConsent','declined'); cookieBanner?.classList.remove('show'); });
+
+// ============================================================================
+// LEGAL POPUPS
+// ============================================================================
+const legalContent = {
+    privacy: { title: 'Privacy Policy', body: `<h3>Privacy Policy</h3><p><strong>Effective Date:</strong> March 26, 2025</p><p>SOLUTIONa4U respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information.</p><h4>Information We Collect</h4><p><strong>Personal Information:</strong> Name, email, telephone, business name, and property details you provide.</p><p><strong>Guest Conversation Data:</strong> Retained within your property profile for conversational continuity. Not disclosed to third parties.</p><p><strong>Usage Data:</strong> Anonymised metrics employed to enhance the service.</p><h4>Data Security</h4><p>All sensitive data is encrypted at rest (AES-256). Tenant isolation ensures no property profile may access another's data.</p><h4>Your Rights</h4><p>You may access, rectify, or request deletion of your data. Contact hcaro@solution4u.com for all such requests.</p>` },
+    terms: { title: 'Terms of Service', body: `<h3>Terms of Service</h3><p><strong>Effective Date:</strong> March 26, 2025</p><h4>1. Service Description</h4><p>LEAH is an AI-powered concierge for short-term rental hosts, managing routine guest communications via your property data.</p><h4>2. Host Responsibility</h4><p>You bear sole responsibility for the accuracy of all property information and remain accountable for all guest interactions and property management decisions.</p><h4>3. Limitation of Liability</h4><p>SOLUTIONa4U shall not be liable for any indirect, incidental, or consequential damages. Total liability shall not exceed fees paid in the preceding twelve months.</p><h4>4. Termination</h4><p>Either party may terminate with notice. Upon termination, your data will be permanently deleted within thirty days.</p>` },
+    cookies: { title: 'Cookie Policy', body: `<h3>Cookie Policy</h3><p><strong>Effective Date:</strong> March 26, 2025</p><h4>What Are Cookies</h4><p>Cookies are small text files stored on your device to facilitate proper website functionality.</p><h4>How We Employ Cookies</h4><ul><li><strong>Essential Cookies:</strong> Required for fundamental site operation</li><li><strong>Analytics Cookies:</strong> Enabling us to understand how visitors engage with our platform</li><li><strong>Preference Cookies:</strong> Retaining your personal settings between visits</li></ul>` },
+    eula: { title: 'End-User License Agreement', body: `<h3>End-User License Agreement</h3><p><strong>Effective Date:</strong> March 26, 2025</p><h4>Grant of License</h4><p>SOLUTIONa4U grants you a non-exclusive, non-transferable licence to deploy the LEAH Bot software in support of your property portfolio.</p><h4>Restrictions</h4><p>You may not modify, reverse-engineer, or redistribute the software. Use for any unlawful purpose is strictly prohibited.</p>` },
+    accessibility: { title: 'Accessibility Statement', body: `<h3>Accessibility Statement</h3><p><strong>Updated:</strong> March 26, 2025</p><p>SOLUTIONa4U is committed to ensuring digital accessibility for all individuals, including those with disabilities.</p><h4>Accessibility Provisions</h4><ul><li>Semantic HTML structure</li><li>Sufficient colour contrast</li><li>Full keyboard navigation support</li><li>Screen reader compatibility</li></ul>` },
+    refund: { title: 'Refund Policy', body: `<h3>Refund Policy</h3><p><strong>Effective Date:</strong> March 26, 2025</p><h4>Service Subscriptions</h4><p>We extend a fourteen-day satisfaction guarantee to all new subscribers. Should the service not meet your expectations, contact us within fourteen days of your initial payment for a full refund.</p>` },
+    disclaimer: { title: 'Disclaimer', body: `<h3>Disclaimer</h3><p><strong>Effective Date:</strong> March 26, 2025</p><p>LEAH Bot is provided on an "as is" basis without warranties of any kind, whether express or implied.</p><h4>No Guarantees</h4><p>We make no representations regarding specific outcomes, including review scores, occupancy rates, or revenue performance.</p>` },
+    copyright: { title: 'Copyright Notice', body: `<h3>Copyright Notice</h3><p><strong>© 2025 SOLUTIONa4U</strong></p><p>All content on this platform, including copy, graphics, logotypes, software, and the LEAH Bot system, constitutes the exclusive intellectual property of SOLUTIONa4U and is protected under United States and international copyright legislation.</p>` }
+};
+const overlayLegal = document.getElementById('legalOverlay');
+const legalTitle = document.getElementById('legalTitle');
+const legalBody = document.getElementById('legalBody');
+document.querySelectorAll('[data-legal]').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const k = link.dataset.legal;
+        if (legalContent[k]) { legalTitle.textContent = legalContent[k].title; legalBody.innerHTML = legalContent[k].body; overlayLegal.classList.add('active'); }
+    });
+});
+document.getElementById('legalClose')?.addEventListener('click', () => overlayLegal.classList.remove('active'));
+overlayLegal?.addEventListener('click', e => { if (e.target === overlayLegal) overlayLegal.classList.remove('active'); });
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.length > 1) {
+            const t = document.querySelector(href);
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        }
+    });
+});
+</script>
+</body>
+</html>
